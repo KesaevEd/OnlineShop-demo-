@@ -1,9 +1,9 @@
-package com.example.onlineshop.modules.auth.data
+package com.example.onlineshop.data
 
 import android.net.Uri
 import com.example.onlineshop.core.domain.UserStorage
 import com.example.onlineshop.core.domain.entity.User
-import com.example.onlineshop.modules.auth.domain.UserRepository
+import com.example.onlineshop.domain.UserRepository
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(

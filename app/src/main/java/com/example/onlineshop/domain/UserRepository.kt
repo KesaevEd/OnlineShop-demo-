@@ -1,4 +1,4 @@
-package com.example.onlineshop.modules.auth.domain
+package com.example.onlineshop.domain
 
 import android.net.Uri
 import com.example.onlineshop.core.data.storage.database.entity.UserDbEntity

@@ -6,15 +6,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.onlineshop.core.data.storage.database.UserSharedPref
 import com.example.onlineshop.core.domain.entity.User
-import com.example.onlineshop.modules.auth.domain.UserRepository
-import com.example.onlineshop.modules.auth.signin.presentation.SignInViewModel
+import com.example.onlineshop.domain.UserRepository
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.launch
 
 class ProfileViewModel @AssistedInject constructor(
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
+    private val userSharedPref: UserSharedPref
 ): ViewModel() {
 
     private val user = MutableLiveData<User>()
@@ -27,12 +28,11 @@ class ProfileViewModel @AssistedInject constructor(
         }
     }
 
-    fun setNewUserByName(userName: String?){
-        Log.d("observe", "setNewUserByName  name = $userName")
+    fun setNewUserByName(){
         viewModelScope.launch {
-            val newUser = userRepository.getUserByName(userName)
+            val name = userSharedPref.userName
+            val newUser = userRepository.getUserByName(name)
             user.value = newUser
-            Log.d("observe", "setNewUserByName    user.value  = ${user.value}")
         }
     }
 

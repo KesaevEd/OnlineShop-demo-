@@ -13,6 +13,11 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <style name="Rv_Title_Text" parent="BaseTextAppearance">
+        <item name="font">@font/poppins_medium</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
     <style name="Primary_Text" parent="BaseTextAppearance">
         <item name="font">@font/montserrat_medium</item>
         <item name="android:textSize">14sp</item>
@@ -23,10 +28,21 @@
         <item name="android:textSize">11sp</item>
     </style>
 
+    <style name="Hint_Text2" parent="BaseTextAppearance">
+        <item name="font">@font/poppins_regular</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
     <style name="Button_Text" parent="BaseTextAppearance">
         <item name="font">@font/montserrat_medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Category_Name_Text" parent="BaseTextAppearance">
+        <item name="font">@font/poppins_medium</item>
+        <item name="android:textColor">#A6A7AB</item>
+        <item name="android:textSize">8sp</item>
     </style>
 
     <style name="BaseTextAppearance" parent="TextAppearance.AppCompat">

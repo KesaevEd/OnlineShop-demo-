@@ -8,4 +8,8 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="SpinnerTheme" parent="android:Widget.Material.Light.Spinner.Underlined">
+        <item name="android:background">@drawable/bg_spinner</item>
+    </style>
 </resources>

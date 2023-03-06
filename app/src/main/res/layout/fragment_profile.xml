@@ -42,6 +42,7 @@
             android:id="@+id/iv_avatar"
             android:layout_width="61dp"
             android:layout_height="61dp"
+            android:scaleType="fitXY"
             app:shapeAppearance="@style/roundedImageView" />
     </com.google.android.material.card.MaterialCardView>
 

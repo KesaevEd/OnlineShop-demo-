@@ -1,4 +1,4 @@
-package com.example.onlineshop.core.di
+package com.example.onlineshop.core.data.storage.database.entity.di
 
 import android.content.Context
 import androidx.room.Room

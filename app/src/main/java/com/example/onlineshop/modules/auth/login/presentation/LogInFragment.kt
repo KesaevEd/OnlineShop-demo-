@@ -25,8 +25,6 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
 
     private val viewModel by lazyViewModel { component.loginViewModel().create() }
 
-    private val userViewModel by lazyViewModel { component.profileViewModel().create() }
-
     private var isPasswordHide = true
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,8 +34,7 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
             try {
                 if (isUserExists) {
                     val name = binding.etFirstName.text.toString().trim()
-                    userViewModel.setNewUserByName(name)
-                    setFragmentResult(RESULT_USER_NAME_KEY, bundleOf(BUNDLE_USER_NAME_KEY to name))
+                    viewModel.saveUserName(name)
                     findNavController().navigate(R.id.action_logInFragment_to_home)
                 } else {
                     showToast(R.string.username_not_exists)

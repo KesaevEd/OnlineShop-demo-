@@ -2,8 +2,8 @@ package com.example.onlineshop.di
 
 import com.example.onlineshop.core.data.storage.UserStorageImpl
 import com.example.onlineshop.core.domain.UserStorage
-import com.example.onlineshop.modules.auth.data.UserRepositoryImpl
-import com.example.onlineshop.modules.auth.domain.UserRepository
+import com.example.onlineshop.data.UserRepositoryImpl
+import com.example.onlineshop.domain.UserRepository
 import dagger.Module
 import dagger.Provides
 

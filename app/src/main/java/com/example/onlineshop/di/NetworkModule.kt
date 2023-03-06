@@ -1,10 +1,9 @@
 package com.example.onlineshop.di
 
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
+import com.example.onlineshop.core.data.network.ShopApi
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -15,10 +14,8 @@ class NetworkModule {
     @Singleton
     @Provides
     fun provideOkHttpClient(
-//        loggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient =
         OkHttpClient().newBuilder()
-//            .addInterceptor(loggingInterceptor)
             .addInterceptor { chain ->
                 val request = chain.request().newBuilder()
                     .addHeader("Content-Type", "application/json; charset=utf-8")
@@ -35,8 +32,13 @@ class NetworkModule {
             .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
+
+    @Singleton
+    @Provides
+    fun provideShopApi(retrofit: Retrofit): ShopApi =
+        retrofit.create(ShopApi::class.java)
+
 
     private companion object {
         private const val BASE_URL = "https://run.mocky.io"

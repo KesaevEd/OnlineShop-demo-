@@ -1,4 +1,4 @@
-package com.example.onlineshop.core.di
+package com.example.onlineshop.core.data.storage.database.entity.di
 
 import com.example.onlineshop.core.data.storage.database.ShopDataBase
 import com.example.onlineshop.core.data.storage.database.dao.UserDao

@@ -32,11 +32,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
 
-            setFragmentResultListener(LogInFragment.RESULT_USER_NAME_KEY){_, bundle ->
-                bundle.getString(LogInFragment.BUNDLE_USER_NAME_KEY)?.let {
-                    profileViewModel.setNewUserByName(it)
-                }
-            }
+            profileViewModel.setNewUserByName()
 
             profileViewModel.userLiveData.observe(viewLifecycleOwner) { user ->
                 user.name?.let {

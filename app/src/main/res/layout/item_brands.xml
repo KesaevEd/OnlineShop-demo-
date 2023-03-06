@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/cl_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="114dp"
+    android:layout_height="149dp"
+    android:layout_marginStart="11dp"
+    android:backgroundTint="@color/blue_light"
+    android:background="@drawable/bg_item_latest">
+
+</androidx.constraintlayout.widget.ConstraintLayout>

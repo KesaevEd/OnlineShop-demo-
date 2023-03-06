@@ -1,4 +1,4 @@
-package com.example.onlineshop.core.di
+package com.example.onlineshop.core.data.storage.database.entity.di
 
 import android.app.Application
 import android.content.Context

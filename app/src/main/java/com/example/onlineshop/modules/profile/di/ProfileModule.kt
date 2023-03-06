@@ -1,7 +1,7 @@
 package com.example.onlineshop.modules.profile.di
 
-import com.example.onlineshop.modules.auth.data.UserRepositoryImpl
-import com.example.onlineshop.modules.auth.domain.UserRepository
+import com.example.onlineshop.data.UserRepositoryImpl
+import com.example.onlineshop.domain.UserRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named

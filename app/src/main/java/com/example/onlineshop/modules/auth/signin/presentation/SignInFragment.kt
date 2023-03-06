@@ -43,6 +43,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
             viewModel.isUserSavedLiveData.observe(viewLifecycleOwner) { isSaved ->
                 try {
                     if (isSaved) {
+                        viewModel.saveUserName(etFirstName.text.toString().trim())
                         findNavController().navigate(R.id.action_signInFragment_to_home)
                     } else {
                         showToast(R.string.username_exists)

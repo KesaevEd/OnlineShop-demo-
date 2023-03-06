@@ -1,8 +1,8 @@
 package com.example.onlineshop
 
 import android.app.Application
-import com.example.onlineshop.core.di.AppModule
-import com.example.onlineshop.core.di.DbModule
+import com.example.onlineshop.core.data.storage.database.entity.di.AppModule
+import com.example.onlineshop.core.data.storage.database.entity.di.DbModule
 import com.example.onlineshop.di.NetworkModule
 import com.example.onlineshop.di.components.AppComponent
 import com.example.onlineshop.di.components.DaggerAppComponent
