@@ -2,6 +2,7 @@ package com.example.onlineshop.modules.home.di
 
 import com.example.onlineshop.di.components.AppComponent
 import com.example.onlineshop.modules.home.presentation.HomeViewModel
+import com.example.onlineshop.modules.productdetails.presentation.ProductDetailsViewModel
 import com.example.onlineshop.modules.profile.presentation.ProfileViewModel
 import dagger.Component
 
@@ -10,4 +11,6 @@ import dagger.Component
 interface HomeComponent {
 
     fun homeViewModel(): HomeViewModel.Factory
+
+    fun productDetailsViewModel(): ProductDetailsViewModel.Factory
 }

@@ -40,7 +40,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 }
 
                 user.imageUri?.let {
-                    Log.d("observe", " user.imageUri  Observed!!!!")
                     Glide.with(binding.ivAvatar).load(it).into(binding.ivAvatar)
                 }
             }

@@ -6,12 +6,15 @@ import com.example.onlineshop.core.domain.entity.LatestProduct
 
 fun HomeContent.toUiEntity(): List<DisplayableItem> {
     val result = mutableListOf<DisplayableItem>()
+
     val categoriesUi = categories.toCategoriesUiEntity()
     val latestUiEntities = latestProducts.toLatestUiEntity()
     val flashSaleIiEntities = flashSaleProducts.toFlashSaleUiEntity()
+
     result.add(CategoriesUi(categoriesUi))
     result.add(LatestProductsUi(latestUiEntities))
     result.add(FlashSaleProductsUi(flashSaleIiEntities))
+
     return result
 }
 

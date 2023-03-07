@@ -43,7 +43,6 @@ dependencies {
             project(':core')
     )
     def okhttp_version = "4.10.0"
-    def room_version = "2.4.3"
     def nav_version = "2.5.3"
     def retrofit_version = "2.9.0"
     def dagger_version = "2.44"
@@ -80,6 +79,10 @@ dependencies {
 
     //carousel recycler view
     implementation 'com.github.sparrow007:carouselrecyclerview:1.2.6'
+
+    implementation "com.mikepenz:fastadapter-extensions-binding:5.5.1"
+    implementation "com.mikepenz:fastadapter-extensions-diff:5.5.1"
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'

@@ -18,6 +18,12 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <style name="Title_Text_Details" parent="BaseTextAppearance">
+        <item name="font">@font/poppins_semibold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
     <style name="Primary_Text" parent="BaseTextAppearance">
         <item name="font">@font/montserrat_medium</item>
         <item name="android:textSize">14sp</item>

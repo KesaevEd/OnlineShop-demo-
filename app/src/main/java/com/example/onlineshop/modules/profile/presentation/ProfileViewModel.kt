@@ -22,7 +22,6 @@ class ProfileViewModel @AssistedInject constructor(
     val userLiveData: LiveData<User> = user
 
     fun setNewUser(newUser: User){
-        Log.d("observe", "setNewUser  = $newUser")
         viewModelScope.launch {
             user.value = newUser
         }

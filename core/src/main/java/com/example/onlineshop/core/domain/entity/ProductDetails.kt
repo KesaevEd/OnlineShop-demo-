@@ -9,8 +9,8 @@ data class ProductDetails(
     var rating: Double? = null,
     var numberOfReviews: Int? = null,
     var price: Int? = null,
-    var colors: ArrayList<String> = arrayListOf(),
-    var imageUrls: ArrayList<String> = arrayListOf()
+    var colors: List<String>? = null,
+    var imageUrls: List<String>? = null
 )
 
 fun ProductDetailsNetworkEntity.toProductDetails(): ProductDetails{

@@ -32,6 +32,7 @@ open class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.homeFragment,
+                R.id.productDetailsFragment,
                 R.id.profileFragment -> {
                     showSystemUI(binding.root)
                     binding.bottomNav.isVisible = true
