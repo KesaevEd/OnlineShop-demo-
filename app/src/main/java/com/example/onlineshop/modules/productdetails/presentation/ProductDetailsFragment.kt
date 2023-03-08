@@ -16,9 +16,11 @@ import com.example.onlineshop.base.lazyViewModel
 import com.example.onlineshop.databinding.FragmentProductDetailsBinding
 import com.example.onlineshop.modules.home.di.DaggerHomeComponent
 import com.example.onlineshop.modules.productdetails.adapters.ColorAdapter
+import com.example.onlineshop.modules.productdetails.adapters.IChoosePhoto
 import com.example.onlineshop.modules.productdetails.adapters.ImageAdapter
+import java.math.MathContext
 
-class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
+class ProductDetailsFragment : Fragment(R.layout.fragment_product_details), IChoosePhoto {
 
     private val binding by viewBinding(FragmentProductDetailsBinding::bind)
 
@@ -27,7 +29,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
     private val viewModel by lazyViewModel { component.productDetailsViewModel().create() }
 
     private val colorAdapter by lazy { ColorAdapter() }
-    private val imageAdapter by lazy { ImageAdapter() }
+    private val imageAdapter by lazy { ImageAdapter(this) }
 
 
     @SuppressLint("SetTextI18n")
@@ -53,7 +55,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
                 }
 
                 details.price?.let {
-                    tvPrice.text = "$ $it"
+                    tvPrice.text = "$ ${"%.2f".format(it.toDouble())}"
                 }
 
                 details.description?.let {
@@ -86,6 +88,12 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
     private fun initRecyclerViews(){
         binding.rvPhotos.adapter = imageAdapter
         binding.rvColors.adapter = colorAdapter
+    }
+
+    override fun choosePhoto(imageUrl:String) {
+        Glide.with(binding.ivMainImage)
+            .load(imageUrl)
+            .into(binding.ivMainImage)
     }
 
 }

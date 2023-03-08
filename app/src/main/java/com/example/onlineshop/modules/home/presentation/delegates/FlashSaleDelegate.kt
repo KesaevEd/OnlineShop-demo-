@@ -24,7 +24,7 @@ fun flashSaleProductDelegate(iNavigateToProductDetails: INavigateToProductDetail
             with(binding) {
                 tvName.text = item.name
                 tvCategory.text = item.category
-                tvPrice.text = item.price.toString()
+                tvPrice.text = "$ ${"%.2f".format(item.price)}"
                 tvDiscount.text = item.discount.toString() + "% off"
                 Glide.with(ivBackground)
                     .load(item.imageUrl)

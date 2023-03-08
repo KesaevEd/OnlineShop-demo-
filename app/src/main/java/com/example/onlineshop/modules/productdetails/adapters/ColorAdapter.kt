@@ -3,14 +3,16 @@ package com.example.onlineshop.modules.productdetails.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.onlineshop.R
 import com.example.onlineshop.databinding.ItemColorBinding
+import kotlin.coroutines.coroutineContext
 
-class ColorAdapter: RecyclerView.Adapter<ColorAdapter.ColorViewHolder>() {
+class ColorAdapter : RecyclerView.Adapter<ColorAdapter.ColorViewHolder>() {
 
     private val differ = AsyncListDiffer(this, ColorListDiffUtilCallback())
     var data: List<String>
@@ -18,15 +20,19 @@ class ColorAdapter: RecyclerView.Adapter<ColorAdapter.ColorViewHolder>() {
         set(value) = differ.submitList(value)
 
 
-        inner class ColorViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)  {
-            val binding by viewBinding(ItemColorBinding::bind)
+    inner class ColorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val binding by viewBinding(ItemColorBinding::bind)
 
-            fun bind(color: String){
-                color.let {
-                    binding.clContainer.setBackgroundColor(android.graphics.Color.parseColor(it))
-                }
+        fun bind(color: String) {
+            color.let {
+                binding.clContainer.setCardBackgroundColor(
+                    android.graphics.Color.parseColor(
+                        it
+                    )
+                )
             }
         }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColorViewHolder {
         val itemView =

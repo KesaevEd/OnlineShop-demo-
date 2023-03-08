@@ -1,13 +1,15 @@
 package com.example.onlineshop.modules.home.presentation.adapters
 
+import androidx.recyclerview.widget.RecyclerView
 import com.example.onlineshop.modules.home.presentation.delegates.latestProductDelegate
 import com.example.onlineshop.modules.home.presentation.entities.DisplayableItem
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 
-class LatestAdapter: AsyncListDifferDelegationAdapter<DisplayableItem>(
+class LatestAdapter : AsyncListDifferDelegationAdapter<DisplayableItem>(
     DisplayableItemDiffCallback()
 ) {
-    companion object{
+
+    companion object {
         const val VIEW_TYPE_CATEGORY = 1
     }
 

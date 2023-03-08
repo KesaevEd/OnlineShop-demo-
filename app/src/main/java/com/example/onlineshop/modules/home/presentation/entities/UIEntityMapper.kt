@@ -1,5 +1,6 @@
 package com.example.onlineshop.modules.home.presentation.entities
 
+import com.example.onlineshop.core.domain.entity.Brand
 import com.example.onlineshop.core.domain.entity.Category
 import com.example.onlineshop.core.domain.entity.FlashSaleProduct
 import com.example.onlineshop.core.domain.entity.LatestProduct
@@ -9,11 +10,13 @@ fun HomeContent.toUiEntity(): List<DisplayableItem> {
 
     val categoriesUi = categories.toCategoriesUiEntity()
     val latestUiEntities = latestProducts.toLatestUiEntity()
-    val flashSaleIiEntities = flashSaleProducts.toFlashSaleUiEntity()
+    val flashSaleUiEntities = flashSaleProducts.toFlashSaleUiEntity()
+    val brandUiEntities = brands.toBrandsUiEntity()
 
     result.add(CategoriesUi(categoriesUi))
     result.add(LatestProductsUi(latestUiEntities))
-    result.add(FlashSaleProductsUi(flashSaleIiEntities))
+    result.add(FlashSaleProductsUi(flashSaleUiEntities))
+    result.add(BrandsUi(brandUiEntities))
 
     return result
 }
@@ -53,5 +56,15 @@ fun FlashSaleProduct.toUiEntity(): FlashSaleProductUi {
         price = price,
         imageUrl = imageUrl,
         discount = discount
+    )
+}
+
+fun List<Brand>.toBrandsUiEntity(): List<DisplayableItem> {
+    return map { it.toBrandUiEntity() }
+}
+
+fun Brand.toBrandUiEntity(): BrandUi {
+    return BrandUi(
+        backGround = backGround
     )
 }

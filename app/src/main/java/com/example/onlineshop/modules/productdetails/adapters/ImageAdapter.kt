@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.onlineshop.R
 import com.example.onlineshop.databinding.ItemProductPhotoBinding
 
-class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+class ImageAdapter(val iChoosePhoto: IChoosePhoto) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
     private val differ = AsyncListDiffer(this, ImageListDiffUtilCallback())
     var data: List<String>
@@ -23,6 +23,7 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
         val binding by viewBinding(ItemProductPhotoBinding::bind)
 
         fun bind(imageUrl: String) {
+            binding.root.setOnClickListener{iChoosePhoto.choosePhoto(imageUrl)}
             imageUrl.let {
                 Glide.with(binding.ivImage)
                     .load(it)

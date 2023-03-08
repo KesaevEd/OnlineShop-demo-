@@ -1,8 +1,10 @@
 package com.example.onlineshop.modules.home.presentation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import android.widget.ArrayAdapter
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -41,7 +43,6 @@ class HomeFragment : Fragment(R.layout.fragment_home), INavigateToProductDetails
             Glide.with(binding.ivAvatar).load(it).into(binding.ivAvatar)
         }
     }
-
     private fun initRecyclerViews() {
         binding.rvRoot.adapter = homeAdapter
     }

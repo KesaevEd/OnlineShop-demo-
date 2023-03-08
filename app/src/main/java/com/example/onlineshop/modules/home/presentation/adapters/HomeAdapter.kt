@@ -7,7 +7,7 @@ import com.example.onlineshop.modules.home.presentation.entities.FlashSaleProduc
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 
 open class HomeAdapter(
-    private val iNavigateToProductDetails: INavigateToProductDetails
+    iNavigateToProductDetails: INavigateToProductDetails
 ) : AsyncListDifferDelegationAdapter<DisplayableItem>(DisplayableItemDiffCallback()) {
 
     companion object {
@@ -25,7 +25,7 @@ open class HomeAdapter(
                 VIEW_TYPE_FLASH_SALE_PRODUCTS,
                 flashSaleProductsDelegate(iNavigateToProductDetails)
             )
-            .addDelegate(VIEW_TYPE_BRANDS, brandDelegate())
+            .addDelegate(VIEW_TYPE_BRANDS, brandsDelegate())
     }
 
 }

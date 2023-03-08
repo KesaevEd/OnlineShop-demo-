@@ -10,10 +10,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.example.onlineshop.R
 import com.example.onlineshop.core.data.storage.database.UserSharedPref
-import com.example.onlineshop.core.domain.entity.Category
-import com.example.onlineshop.core.domain.entity.FlashSaleProduct
-import com.example.onlineshop.core.domain.entity.LatestProduct
-import com.example.onlineshop.core.domain.entity.User
+import com.example.onlineshop.core.domain.entity.*
 import com.example.onlineshop.domain.ProductRepository
 import com.example.onlineshop.domain.UserRepository
 import com.example.onlineshop.modules.home.presentation.entities.DisplayableItem
@@ -44,7 +41,8 @@ class HomeViewModel @AssistedInject constructor(
             val content = HomeContent(
                 categories = getCategories(),
                 latestProducts = latest,
-                flashSaleProducts = flashSale
+                flashSaleProducts = flashSale,
+                brands = getBrands()
             )
 
             val contentUi = content.toUiEntity()
@@ -62,6 +60,14 @@ class HomeViewModel @AssistedInject constructor(
         }
 
         return categories
+    }
+
+    private fun getBrands(): List<Brand>{
+        val brands = mutableListOf<Brand>()
+        brands.add(Brand(R.color.blue_light))
+        brands.add(Brand(R.color.blue))
+        brands.add(Brand(R.color.blue_dark))
+        return brands
     }
 
     fun setUserAvatarByUserName(){
