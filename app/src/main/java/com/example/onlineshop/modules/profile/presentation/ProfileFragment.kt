@@ -58,7 +58,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private fun setOnLogoutClickListener(){
         binding.flLogout.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_global_signInFragment)
         }
     }
 

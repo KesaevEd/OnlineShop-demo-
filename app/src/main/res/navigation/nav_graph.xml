@@ -10,7 +10,7 @@
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.onlineshop.modules.auth.signin.presentation.SignInFragment"
-        android:label="SignInFragment" >
+        android:label="SignInFragment">
         <action
             android:id="@+id/action_signInFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
@@ -22,10 +22,17 @@
         android:id="@+id/logInFragment"
         android:name="com.example.onlineshop.modules.auth.login.presentation.LogInFragment"
         android:label="fragment_log_in"
-        tools:layout="@layout/fragment_log_in" >
+        tools:layout="@layout/fragment_log_in">
         <action
             android:id="@+id/action_logInFragment_to_home"
             app:destination="@id/home" />
+
     </fragment>
+    <action
+        android:id="@+id/action_global_signInFragment"
+        app:destination="@id/signInFragment"
+        app:launchSingleTop="false"
+        app:popUpTo="@id/profileFragment"
+        app:popUpToInclusive="true" />
 
 </navigation>
